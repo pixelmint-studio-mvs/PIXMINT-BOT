@@ -1,0 +1,74 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.gemini/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+**/.idea/
+
+# Visual Studio Code related
+.vscode/
+**/.vscode/
+
+# Flutter / Dart / Pub related
+**/doc/api/
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+**/build/
+
+# Windows / OS build artifacts
+windows/flutter/ephemeral/
+**/windows/flutter/ephemeral/
+
+# Symbol processing & Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android Studio / Gradle
+.gradle/
+**/.gradle/
+
+# Cloudflare Workers & Node.js
+node_modules/
+**/node_modules/
+.wrangler/
+**/.wrangler/
+
+# Secret & Environment files
+*.env
+*.env.*
+*.pem
+*.key
+*.cert
+*.secret
+
+# AI Agent & Internal Scaffolding (excluded from source control)
+.agent/
+.agents/
+.gsd/
+GSD-STYLE.md
+PROJECT_RULES.md
+scripts/
+
+# External / Staging Documentation & Loose Root Mockups
+ARCHI-DRAFT-KNOWLEDGE-BASE/
+PIXMINT BOT.jpeg
+flutter_01.png

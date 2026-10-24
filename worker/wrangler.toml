@@ -1,0 +1,46 @@
+name = "archidraft-pixmint-bot"
+main = "src/index.ts"
+compatibility_date = "2024-04-05"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+AI_PROVIDER = "local_grounded" # Supported: "local_grounded", "cloudflare", "gemini", "openai"
+AI_MODEL_NAME = "@cf/meta/llama-3.1-8b-instruct"
+MAX_HISTORY_MESSAGES = "10"
+MAX_INPUT_CHARS = "1000"
+RATE_LIMIT_PER_MINUTE = "30"
+
+# Note: Secret credentials such as AI_PROVIDER_API_KEY and FIREBASE_PROJECT_ID
+# are injected via `wrangler secret put` and are never hardcoded in source control.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "archidraft-d1"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[ai]
+binding = "AI"
+
+# --- Staging Environment Configuration ---
+[env.staging]
+name = "archidraft-pixmint-bot-staging"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+AI_PROVIDER = "local_grounded" # Switch to "cloudflare" once AI binding is activated on staging
+AI_MODEL_NAME = "@cf/meta/llama-3.1-8b-instruct"
+MAX_HISTORY_MESSAGES = "10"
+MAX_INPUT_CHARS = "1000"
+RATE_LIMIT_PER_MINUTE = "60"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "archidraft-d1-staging"
+database_id = "206f9030-74f2-473f-81d1-06a9a848ea2b"
+migrations_dir = "migrations"
+
+[env.staging.ai]
+binding = "AI"
+
